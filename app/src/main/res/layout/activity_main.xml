@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+<!--테이블레이아웃을 개선하기 위해 만들어진 GriLayout-->
+ <!--뷰들이 겹칠수 있다, Rowsapn이 됨, TabelRow같은 중첩구조 없음-->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+       android:orientation="horizontal"
+        android:columnCount="3">
+
+    <Button android:text="1"/>
+    <Button android:text="2"/>
+    <Button android:text="3"/>
+    <Button android:text="4"/>
+        <Button android:text="5"/>
+        <Button android:text="6"/>
+        <Button android:text="7"android:layout_column="1"/>
+        <Button android:text="8"android:layout_column="0"/>
+        <!--줄위치 조정-->
+        <Button android:text="9"android:layout_row="3"android:layout_column="2"/>
+
+        <!--같은 위치에 배치하면 뷰가 겹쳐짐-->
+        <Button android:text="10" android:layout_row="3"android:layout_column="0"/>
+        <Button android:text="11"android:layout_row="3"android:layout_column="0"/>
+        <Button android:text="12"/>
+        <!--셀병합colspan-->
+        <Button android:text="13"android:layout_columnSpan="2"android:layout_gravity="fill_horizontal"/>
+
+        <!--줄 경합(rowSpan)-->
+        <Button android:text="14" android:layout_rowSpan="2"android:layout_gravity="fill_vertical"/>
+        <Button/>
+        <Button android:layout_column="2"/>
+        <!--균등사이즈 :weight-->
+        </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:columnCount="3">
+<!--api21버젼이상에서만 가능함-->
+        <Button android:text="a" android:layout_columnWeight="1"/>
+        <Button android:text="b" android:layout_columnWeight="1"/>
+        <Button android:text="c" android:layout_columnWeight="1"/>
+        <Button android:text="d" android:layout_columnWeight="1"/>
+
+    </GridLayout>
+
+</RelativeLayout>
